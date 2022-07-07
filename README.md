@@ -11,6 +11,7 @@ Algunas de las tecnologias usadas son:
 - Firebase
 
 ## Capturas de la Aplicación
+
 >Login
 ![](screenshot/bg1.PNG)
 
