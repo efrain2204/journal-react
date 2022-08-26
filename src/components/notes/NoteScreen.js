@@ -2,7 +2,7 @@ import React, {useEffect, useRef} from 'react';
 import NotesAppBar from "./NotesAppBar";
 import {useDispatch, useSelector} from "react-redux";
 import {useForm} from "../../hooks/useForm";
-import {activeNote, startDeleting} from "../../actions/notes";
+import {notesActive, startDeleting} from "../../redux/notes.slice";
 
 const NoteScreen = () => {
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ const NoteScreen = () => {
   },[note,reset]);
 
   useEffect(()=>{
-    dispatch(activeNote(formValues.id,{...formValues}));
+    dispatch(notesActive(formValues));
   },[formValues,dispatch])
 
   const handleDelete = () => {
@@ -32,7 +32,6 @@ const NoteScreen = () => {
       <NotesAppBar />
 
       <div className="notes__content">
-
         <input
           type="text"
           placeholder="Some awesome title"

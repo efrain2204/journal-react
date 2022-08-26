@@ -1,12 +1,13 @@
 import React from 'react';
-import {startSaveNote, startUploading} from "../../actions/notes";
 import {useDispatch, useSelector} from "react-redux";
 import moment from "moment";
+import {startSaveNote, startUploading} from "../../redux/notes.slice";
 
 const NotesAppBar = () => {
   const dispatch = useDispatch();
   let date = moment(new Date().getTime());
   const {active} = useSelector(state => state.notes);
+
   const handleSave = () => {
     dispatch(startSaveNote( active ));
   }
@@ -16,7 +17,6 @@ const NotesAppBar = () => {
   }
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    console.log(file)
     if (file){
       dispatch(startUploading(file));
     }

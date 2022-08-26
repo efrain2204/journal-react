@@ -1,8 +1,8 @@
 import React from 'react';
 import JournalEntries from "./JournalEntries";
 import {useDispatch, useSelector} from "react-redux";
-import {startLogout} from "../../actions/auth";
-import {startNewNote} from "../../actions/notes";
+import {startLogout} from "../../redux/auth.slice";
+import {startNewNote} from "../../redux/notes.slice";
 
 const Sidebar = () => {
   const dispatch = useDispatch();

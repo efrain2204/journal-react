@@ -3,9 +3,10 @@ import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 
 import {useForm} from "../../hooks/useForm";
-import {login, startLoginEmailPassword} from "../../actions/auth";
+// import {login, startLoginEmailPassword} from "../../actions/auth";
 import {signInWithPopup} from "firebase/auth";
 import {auth, provider} from "../../firebase/firebase-config";
+import {login, startLoginEmailPassword} from "../../redux/auth.slice";
 
 const LoginScreen = () => {
 
@@ -29,9 +30,7 @@ const LoginScreen = () => {
     // dispatch(startGoogleLogin);
     signInWithPopup(auth,provider)
       .then( ({user}) => {
-        dispatch(
-          login(user.uid, user.displayName)
-        )
+        dispatch( login({uid:user.uid,displayName:user.displayName} ) )
       })
   }
 
