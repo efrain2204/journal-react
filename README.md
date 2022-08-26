@@ -5,9 +5,9 @@ Algunas de las tecnologias usadas son:
 - HTML
 - CSS
 - Sass
-- JavaScrit
+- JavaScript
 - React
-- Redux
+- Redux toolkit
 - Firebase
 
 ## Capturas de la Aplicación
